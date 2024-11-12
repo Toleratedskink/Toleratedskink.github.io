@@ -1,2 +1,2 @@
-# procrastinate.io
+# procrast.io
 a procrastination app
