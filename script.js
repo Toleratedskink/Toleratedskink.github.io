@@ -1,41 +1,25 @@
-// Global variable to hold assignment data
+// Global assignment data storage
 let assignments = [];
 
-// Function to navigate to the Assignments page
+// Navigate to the Assignments page
 function goToAssignments() {
-    // Hide the homepage and show the assignments page
     document.getElementById('homepage-container').style.display = 'none';
+    document.getElementById('calendar-page').style.display = 'none';
     document.getElementById('assignments-container').style.display = 'block';
-
-    // Update the bell notification
-    updateBell();
+    renderAssignments();
 }
 
-// Function to go back to the homepage
+// Navigate to the Calendar page from Assignments page
+function goToCalendar() {
+    document.getElementById('assignments-container').style.display = 'none';
+    document.getElementById('calendar-page').style.display = 'block';
+}
+
+// Navigate to the Homepage from any page
 function goToHome() {
     document.getElementById('assignments-container').style.display = 'none';
+    document.getElementById('calendar-page').style.display = 'none';
     document.getElementById('homepage-container').style.display = 'block';
-}
-
-// Function to update the bell notification
-function updateBell() {
-    // Filter assignments that are due today or later
-    const dueAssignments = assignments.filter(assignment => {
-        const dueDate = new Date(assignment.dueDate);
-        return dueDate >= new Date(); // Filter assignments due today or later
-    });
-
-    // Update bell count display
-    const bellCountText = document.getElementById('bell-count');
-    bellCountText.textContent = dueAssignments.length;
-
-    // Show/hide the bell count based on the number of due assignments
-    const bellContainer = document.getElementById('bell-container');
-    if (dueAssignments.length > 0) {
-        bellContainer.classList.add('active');
-    } else {
-        bellContainer.classList.remove('active');
-    }
 }
 
 // Handle assignment form submission
@@ -46,20 +30,29 @@ document.getElementById('assignment-form').addEventListener('submit', function (
     const dueDate = document.getElementById('due-date').value;
     const difficulty = document.getElementById('difficulty').value;
 
-    // Add the assignment to the assignments array
     assignments.push({ name, dueDate, difficulty });
 
-    // Reset form
-    document.getElementById('assignment-name').value = '';
-    document.getElementById('due-date').value = '';
-    document.getElementById('difficulty').value = '1';
+    // Close form modal
+    closeAssignmentForm();
 
-    // Update the calendar
+    // Re-render calendar and assignments list
     renderCalendar(currentMonth, currentYear);
-    updateBell();
+    renderAssignments();
 });
 
-// Calendar rendering logic
+// Render assignments on the assignments page
+function renderAssignments() {
+    const assignmentList = document.getElementById('assignment-list');
+    assignmentList.innerHTML = ''; // Clear the existing list
+
+    assignments.forEach((assignment) => {
+        const li = document.createElement('li');
+        li.textContent = `${assignment.name} - Due: ${assignment.dueDate}`;
+        assignmentList.appendChild(li);
+    });
+}
+
+// Calendar logic
 let currentDate = new Date();
 let currentMonth = currentDate.getMonth();
 let currentYear = currentDate.getFullYear();
@@ -145,11 +138,9 @@ function deleteAssignment(index) {
     // Remove the assignment from the assignments array
     assignments.splice(index, 1);
 
-    // Re-render the calendar
+    // Re-render the calendar and assignments list
     renderCalendar(currentMonth, currentYear);
-
-    // Update the bell notification
-    updateBell();
+    renderAssignments();
 }
 
 // Initial render of the calendar

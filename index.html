@@ -16,49 +16,25 @@
 
         <div class="go-to-assignments">
             <button onclick="goToAssignments()">Go to Assignments</button>
-
-            <div class="bell-container" id="bell-container">
-                <div id="bell" class="bell">
-                    🔔
-                </div>
-                <span id="bell-count">0</span>
-            </div>
         </div>
     </div>
 
-    <!-- Assignments Page -->
-    <div id="assignments-container" class="assignments-container" style="display:none;">
-        <!-- Back Button -->
+    <!-- Calendar Page -->
+    <div id="calendar-page" class="calendar-page" style="display:none;">
+        <!-- Back Button to Homepage -->
         <button class="back-to-home" onclick="goToHome()">Back to Homepage</button>
 
-        <!-- Assignment Section -->
-        <div class="assignment-section">
-            <!-- Assignment Form -->
-            <div class="assignment-form">
-                <h3>Add Assignment</h3>
-                <form id="assignment-form">
-                    <input type="text" id="assignment-name" placeholder="Assignment Name" required>
-                    <input type="date" id="due-date" required>
-                    <select id="difficulty" required>
-                        <option value="1">Difficulty: 1</option>
-                        <option value="2">Difficulty: 2</option>
-                        <option value="3">Difficulty: 3</option>
-                        <option value="4">Difficulty: 4</option>
-                        <option value="5">Difficulty: 5</option>
-                    </select>
-                    <button type="submit">Add Assignment</button>
-                </form>
-            </div>
-        </div>
+        <!-- Go to Assignments Button -->
+        <button class="go-to-assignments" onclick="goToAssignments()">Go to Assignments</button>
 
         <!-- Calendar Section -->
-        <div class="calendar-section">
-            <div class="calendar-header">
-                <button onclick="changeMonth(-1)">&#8592;</button>
-                <h2 id="calendar-month-year"></h2>
-                <button onclick="changeMonth(1)">&#8594;</button>
-            </div>
+        <div class="calendar-header">
+            <button onclick="changeMonth(-1)">&#8592;</button>
+            <h2 id="calendar-month-year"></h2>
+            <button onclick="changeMonth(1)">&#8594;</button>
+        </div>
 
+        <div class="calendar-container">
             <table id="calendar">
                 <thead>
                     <tr>
@@ -73,6 +49,45 @@
                 </thead>
                 <tbody></tbody>
             </table>
+        </div>
+
+        <!-- Add Assignment Button -->
+        <button class="add-assignment" onclick="showAssignmentForm()">Add Assignment</button>
+    </div>
+
+    <!-- Assignments Page -->
+    <div id="assignments-container" class="assignments-container" style="display:none;">
+        <!-- Back Button to Homepage -->
+        <button class="back-to-home" onclick="goToHome()">Back to Homepage</button>
+
+        <!-- Go to Calendar Page -->
+        <button class="go-to-calendar" onclick="goToCalendar()">Go to Calendar</button>
+
+        <div class="assignment-list">
+            <h3>Your Assignments</h3>
+            <ul id="assignment-list">
+                <!-- Assignment items will appear here -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Assignment Form Modal -->
+    <div id="assignment-form-modal" class="modal">
+        <div class="modal-content">
+            <h3>Add New Assignment</h3>
+            <form id="assignment-form">
+                <input type="text" id="assignment-name" placeholder="Assignment Name" required>
+                <input type="date" id="due-date" required>
+                <select id="difficulty" required>
+                    <option value="1">Difficulty: 1</option>
+                    <option value="2">Difficulty: 2</option>
+                    <option value="3">Difficulty: 3</option>
+                    <option value="4">Difficulty: 4</option>
+                    <option value="5">Difficulty: 5</option>
+                </select>
+                <button type="submit">Add Assignment</button>
+                <button type="button" onclick="closeAssignmentForm()">Cancel</button>
+            </form>
         </div>
     </div>
 
