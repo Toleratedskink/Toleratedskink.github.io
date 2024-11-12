@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procrastinate.io</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+    <!-- Homepage -->
+    <div class="homepage-container" id="homepage-container">
+        <h1>Procrastinate.io</h1>
+        <p>Organize your tasks and stop procrastinating!</p>
+
+        <div class="go-to-assignments">
+            <button onclick="goToAssignments()">Go to Assignments</button>
+
+            <div class="bell-container" id="bell-container">
+                <div id="bell" class="bell">
+                    🔔
+                </div>
+                <span id="bell-count">0</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Assignments Page -->
+    <div id="assignments-container" class="assignments-container" style="display:none;">
+        <!-- Back Button -->
+        <button class="back-to-home" onclick="goToHome()">Back to Homepage</button>
+
+        <!-- Assignment Section -->
+        <div class="assignment-section">
+            <!-- Assignment Form -->
+            <div class="assignment-form">
+                <h3>Add Assignment</h3>
+                <form id="assignment-form">
+                    <input type="text" id="assignment-name" placeholder="Assignment Name" required>
+                    <input type="date" id="due-date" required>
+                    <select id="difficulty" required>
+                        <option value="1">Difficulty: 1</option>
+                        <option value="2">Difficulty: 2</option>
+                        <option value="3">Difficulty: 3</option>
+                        <option value="4">Difficulty: 4</option>
+                        <option value="5">Difficulty: 5</option>
+                    </select>
+                    <button type="submit">Add Assignment</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Calendar Section -->
+        <div class="calendar-section">
+            <div class="calendar-header">
+                <button onclick="changeMonth(-1)">&#8592;</button>
+                <h2 id="calendar-month-year"></h2>
+                <button onclick="changeMonth(1)">&#8594;</button>
+            </div>
+
+            <table id="calendar">
+                <thead>
+                    <tr>
+                        <th>Sun</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
