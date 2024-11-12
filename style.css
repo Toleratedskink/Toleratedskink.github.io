@@ -7,8 +7,8 @@
 
 /* Body */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f7fc;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
     color: #333;
     padding: 20px;
     display: flex;
@@ -21,31 +21,42 @@ body {
 /* Homepage */
 .homepage-container {
     text-align: center;
-    padding: 20px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 400px;
 }
 
 .homepage-container h1 {
-    font-size: 2em;
+    font-size: 2.5em;
     margin-bottom: 10px;
     color: #ff7e5f;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .homepage-container p {
     font-size: 1.2em;
-    color: #555;
+    color: #333;
     margin-bottom: 20px;
 }
 
 .go-to-assignments button {
-    padding: 12px 20px;
-    font-size: 1.1em;
-    background-color: #feb47b;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background-color: #ff4d65;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 25px;
     cursor: pointer;
-    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
     width: 60%;
+    margin-bottom: 20px;
+}
+
+.go-to-assignments button:hover {
+    background-color: #ff3366;
 }
 
 .bell-container {
@@ -53,7 +64,12 @@ body {
 }
 
 .bell {
-    font-size: 2em;
+    font-size: 2.5em;
+    color: #fff;
+    background-color: #feb47b;
+    border-radius: 50%;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 #bell-count {
@@ -63,8 +79,8 @@ body {
     background-color: red;
     color: white;
     border-radius: 50%;
-    padding: 5px;
-    font-size: 0.8em;
+    padding: 8px;
+    font-size: 0.9em;
 }
 
 /* Assignments Page */
@@ -73,21 +89,29 @@ body {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .back-to-home {
-    padding: 10px 20px;
-    font-size: 1em;
-    background-color: #ff7e5f;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background-color: #feb47b;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 25px;
     cursor: pointer;
     margin-bottom: 20px;
-    width: 50%;
+    width: 60%;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    transition: background-color 0.3s ease;
+}
+
+.back-to-home:hover {
+    background-color: #ff7e5f;
 }
 
 .assignment-section {
@@ -98,26 +122,33 @@ body {
 .assignment-form select,
 .assignment-form button {
     width: 100%;
-    padding: 12px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1em;
+    padding: 15px;
+    margin: 12px 0;
+    border: 2px solid #ff7e5f;
+    border-radius: 25px;
+    font-size: 1.1em;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.assignment-form input:focus,
+.assignment-form select:focus {
+    border-color: #feb47b;
+    box-shadow: 0 0 8px rgba(255, 126, 95, 0.5);
 }
 
 .assignment-form button {
-    background-color: #feb47b;
+    background-color: #ff7e5f;
     color: white;
     cursor: pointer;
 }
 
 .assignment-form button:hover {
-    background-color: #ff7e5f;
+    background-color: #feb47b;
 }
 
-/* Calendar Section */
 .calendar-section {
-    width: 100%;
+    margin-top: 20px;
 }
 
 .calendar-header {
@@ -130,6 +161,21 @@ body {
 #calendar-month-year {
     font-size: 1.5em;
     color: #333;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+#calendar-header button {
+    font-size: 1.5em;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #ff7e5f;
+    transition: color 0.3s ease;
+}
+
+#calendar-header button:hover {
+    color: #feb47b;
 }
 
 table {
@@ -139,15 +185,29 @@ table {
 
 th, td {
     width: 14.28%;
-    height: 60px;
+    height: 70px;
     text-align: center;
     vertical-align: middle;
-    border: 1px solid #ddd;
-    font-size: 1.1em;
+    border: 1px solid #ff7e5f;
+    font-size: 1.2em;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+th {
+    background-color: #ff7e5f;
+    color: white;
 }
 
 td {
-    position: relative;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+}
+
+td:hover {
+    background-color: #ff4d65;
+    color: white;
 }
 
 .assignment-mark {
@@ -158,9 +218,10 @@ td {
     background-color: #feb47b;
     color: white;
     border-radius: 50%;
-    padding: 5px;
+    padding: 7px;
     font-size: 0.9em;
     cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .assignment-mark:hover {
@@ -174,7 +235,7 @@ td {
     }
 
     .homepage-container h1 {
-        font-size: 1.8em;
+        font-size: 2em;
     }
 
     .go-to-assignments button {
@@ -184,7 +245,7 @@ td {
     .assignment-form input,
     .assignment-form select,
     .assignment-form button {
-        font-size: 0.9em;
+        font-size: 1em;
     }
 
     .calendar-header button {
@@ -194,6 +255,6 @@ td {
     table th,
     table td {
         font-size: 1em;
-        height: 50px;
+        height: 60px;
     }
 }
