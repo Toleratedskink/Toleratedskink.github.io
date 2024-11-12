@@ -1,6 +1,6 @@
 {
-    "name": "Procrastinate.io",
-    "short_name": "Procrastinate",
+    "name": "Procrast.io",
+    "short_name": "Procrast.io",
     "description": "Manage your assignments and stop procrastinating!",
     "start_url": "./index.html",
     "display": "standalone",
