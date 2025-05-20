@@ -1,83 +1,131 @@
+
 body {
-  font-family: sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: #0a0a0a;
+  color: #d0e6ff;
   transition: background 0.3s, color 0.3s;
 }
 
 header {
-  background: #007acc;
-  color: white;
-  padding: 1em;
+  background: #003366;
+  color: #d0e6ff;
+  padding: 2em 1em;
   text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 255, 0.2);
 }
 
 header h1 {
   margin: 0.2em 0;
+  font-size: 2.5em;
+}
+
+header p {
+  font-size: 1.2em;
+  margin-top: 0.5em;
 }
 
 .links a {
   margin: 0 10px;
-  color: white;
+  color: #66ccff;
   text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.links a:hover {
+  color: #00bfff;
+}
+
+#toggle {
+  margin-top: 1em;
+  padding: 0.6em 1.2em;
+  background: #001f3f;
+  color: #d0e6ff;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 section {
   padding: 2em;
+  max-width: 900px;
+  margin: auto;
+}
+
+h2 {
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
 }
 
 ul {
   list-style-type: none;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 ul li {
-  display: inline-block;
-  background: #007acc;
-  color: white;
+  background: #001f3f;
+  color: #66ccff;
   padding: 0.5em 1em;
   margin: 0.5em;
   border-radius: 5px;
+  font-weight: bold;
 }
 
 .project {
-  background: #e2e2e2;
-  padding: 1em;
-  border-radius: 5px;
+  background: #002b55;
+  padding: 1.5em;
+  border-radius: 10px;
   margin-top: 1em;
+  box-shadow: 0 4px 8px rgba(0, 0, 255, 0.1);
+}
+
+.project h3 {
+  color: #66ccff;
+}
+
+.project a {
+  display: inline-block;
+  margin-top: 0.5em;
+  color: #00bfff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.project a:hover {
+  text-decoration: underline;
 }
 
 footer {
-  background: #222;
-  color: white;
+  background: #001f3f;
+  color: #66ccff;
   text-align: center;
   padding: 1em;
 }
 
 .dark {
-  background-color: #121212;
-  color: #f4f4f4;
+  background-color: #000000;
+  color: #d0e6ff;
 }
 
 .dark header {
-  background: #222;
+  background: #000d1a;
 }
 
 .dark .links a {
-  color: #f4f4f4;
+  color: #66ccff;
 }
 
 .dark .project {
-  background: #333;
+  background: #001a33;
 }
 
-#toggle {
-  margin-top: 1em;
-  padding: 0.5em 1em;
-  background: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.dark #toggle {
+  background: #000000;
 }
