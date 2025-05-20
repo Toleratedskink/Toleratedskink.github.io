@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeremy Burke - Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Jeremy Burke</h1>
+    <p>Hello! My name is Jeremy and I am a computer engineer. I love to develop and do hardware projects! Welcome to my page.</p>
+    <div class="links">
+      <a href="https://github.com/Toleratedskink" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/jeremy-burke-781892268" target="_blank">LinkedIn</a>
+      <a href="mailto:burkejeremy2004@gmail.com">Email</a>
+      <a href="resume/Burke_Jeremy_Resume_24-25.pdf" target="_blank">Resume</a>
+    </div>
+    <button id="toggle">🌙 Toggle Dark Mode</button>
+  </header>
+
+  <section>
+    <h2>Skills</h2>
+    <ul>
+      <li>C</li><li>C++</li><li>Python</li><li>Linux</li>
+      <li>Bash</li><li>Assembly</li><li>VHDL</li><li>Verilog</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Smart Home Device</h3>
+      <p>Final project for CPE422. A system designed to enhance home automation and IoT integration.</p>
+      <a href="https://github.com/Toleratedskink/Burke_CPE422_FinalProject" target="_blank">View on GitHub</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Jeremy Burke</p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('toggle');
+    toggleBtn.onclick = () => {
+      document.body.classList.toggle('dark');
+    };
+  </script>
+</body>
+</html>
