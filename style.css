@@ -90,35 +90,6 @@ ul li {
   color: #66ccff;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-ul li {
-  background: #001f3f;
-  color: #66ccff;
-  padding: 0.5em 1em;
-  margin: 0.5em;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-.project {
-  background: #002b55;
-  padding: 1.5em;
-  border-radius: 10px;
-  margin-top: 1em;
-  box-shadow: 0 4px 8px rgba(0, 0, 255, 0.1);
-}
-
-.project h4 {
-  color: #66ccff;
-}
-
 .project a {
   display: inline-block;
   margin-top: 0.5em;
