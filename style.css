@@ -90,6 +90,14 @@ ul li {
   color: #66ccff;
 }
 
+.project {
+  background: #002b55;
+  padding: 1.5em;
+  border-radius: 10px;
+  margin-top: 1em;
+  box-shadow: 0 4px 8px rgba(0, 0, 255, 0.1);
+}
+
 .project h4 {
   color: #66ccff;
 }
